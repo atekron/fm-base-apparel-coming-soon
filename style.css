@@ -117,14 +117,35 @@ form {
 }
 
 #submit-btn:hover {
-  background: var(--soft-red);
-  border: 0.1rem solid var(--soft-red);
+  /* background: var(--soft-red);
+  border: 0.1rem solid var(--soft-red); */
+  background: linear-gradient(
+    135deg,
+    hsla(0, 80%, 86%, 50%),
+    hsla(0, 74%, 74%, 50%)
+  );
 }
 
 #submit-btn img {
   width: auto;
   height: 1.6rem;
   object-fit: cover;
+}
+
+.email-validation-error {
+  display: none;
+  color: var(--soft-red);
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  margin-left: 2rem;
+}
+
+.email-validation-error::before {
+  content: url("/images/icon-error.svg");
+  position: absolute;
+  right: -2.2rem;
+  top: -3.4rem;
 }
 
 @media screen and (min-width: 89rem) {
@@ -192,5 +213,10 @@ form {
 
   #submit-btn {
     width: 6rem;
+    height: 3.5rem;
+  }
+  .email-validation-error::before {
+    right: -8rem;
+    top: -3.4rem;
   }
 }
