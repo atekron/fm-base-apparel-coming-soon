@@ -46,13 +46,11 @@ body {
   /* height: 1rem; */
 }
 
-.logo img {
-  height: 1.6rem;
-  width: auto;
-  object-fit: cover;
+.desktop-hero {
+  display: none;
 }
 
-.hero img {
+.mobile-hero {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -98,7 +96,7 @@ form {
 
 .email-input:focus {
   outline: none;
-  box-shadow: inset 0 0 1rem hsla(0, 36%, 70%, 0.5);
+  box-shadow: inset 0 0 0.8rem hsla(0, 36%, 70%, 0.5);
 }
 
 .email-input::placeholder {
@@ -127,4 +125,72 @@ form {
   width: auto;
   height: 1.6rem;
   object-fit: cover;
+}
+
+@media screen and (min-width: 89rem) {
+  /* body {
+    background: url("/images/bg-pattern-desktop.svg") top left no-repeat;
+  } */
+
+  .container {
+    all: unset;
+    margin: auto;
+    width: 89rem;
+    max-height: 48rem;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 7rem auto 60rem;
+    grid-template-areas: "l i" "h i" "f i";
+    background: url("/images/bg-pattern-desktop.svg") top left no-repeat;
+    background-size: 60% 100%;
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
+  }
+
+  .logo {
+    grid-area: l;
+    margin: 3rem 9rem;
+    max-height: 10vh;
+  }
+
+  .hero {
+    grid-area: i;
+    height: 48rem;
+  }
+
+  .mobile-hero {
+    background-color: aqua;
+    display: none;
+  }
+
+  .desktop-hero {
+    display: block;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  header {
+    grid-area: h;
+    margin: 4rem 9rem;
+    max-height: 40vh;
+  }
+
+  header h1 {
+    font-size: 4rem;
+  }
+
+  header p {
+    max-width: 28rem;
+  }
+
+  form {
+    grid-area: f;
+    margin: 0 9rem;
+    max-height: 3.5rem;
+    width: 30rem;
+  }
+
+  #submit-btn {
+    width: 6rem;
+  }
 }
